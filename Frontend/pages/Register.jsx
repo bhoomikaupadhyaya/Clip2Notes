@@ -168,3 +168,178 @@ function Register() {
             </p>
 
             {/* Register Form Comes Here */}
+                        <form className="mt-10 space-y-6">
+
+              {/* Full Name */}
+
+              <div>
+
+                <label className="mb-2 block text-sm font-medium text-slate-300">
+                  Full Name
+                </label>
+
+                <input
+                  type="text"
+                  placeholder="Enter your full name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  className={`w-full rounded-xl border bg-slate-900 px-5 py-4 text-white placeholder:text-slate-500 transition focus:ring-2 ${
+                    errors.fullName
+                      ? "border-red-500 focus:ring-red-500/20"
+                      : "border-slate-700 focus:border-blue-500 focus:ring-blue-500/20"
+                  }`}
+                />
+
+                {errors.fullName && (
+                  <p className="mt-2 text-sm text-red-400">
+                    {errors.fullName}
+                  </p>
+                )}
+
+              </div>
+
+              {/* Email */}
+
+              <div>
+
+                <label className="mb-2 block text-sm font-medium text-slate-300">
+                  Email Address
+                </label>
+
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={`w-full rounded-xl border bg-slate-900 px-5 py-4 text-white placeholder:text-slate-500 transition focus:ring-2 ${
+                    errors.email
+                      ? "border-red-500 focus:ring-red-500/20"
+                      : "border-slate-700 focus:border-blue-500 focus:ring-blue-500/20"
+                  }`}
+                />
+
+                {errors.email && (
+                  <p className="mt-2 text-sm text-red-400">
+                    {errors.email}
+                  </p>
+                )}
+
+              </div>
+
+              {/* Password */}
+
+              <div>
+
+                <label className="mb-2 block text-sm font-medium text-slate-300">
+                  Password
+                </label>
+
+                <div className="relative">
+
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Create a password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className={`w-full rounded-xl border bg-slate-900 px-5 py-4 pr-14 text-white placeholder:text-slate-500 transition focus:ring-2 ${
+                      errors.password
+                        ? "border-red-500 focus:ring-red-500/20"
+                        : "border-slate-700 focus:border-blue-500 focus:ring-blue-500/20"
+                    }`}
+                  />
+
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setShowPassword(!showPassword)
+                    }
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white"
+                  >
+                    {showPassword ? (
+                      <FaEyeSlash />
+                    ) : (
+                      <FaEye />
+                    )}
+                  </button>
+
+                </div>
+
+                {errors.password && (
+                  <p className="mt-2 text-sm text-red-400">
+                    {errors.password}
+                  </p>
+                )}
+
+              </div>
+
+              {/* Confirm Password */}
+
+              <div>
+
+                <label className="mb-2 block text-sm font-medium text-slate-300">
+                  Confirm Password
+                </label>
+
+                <div className="relative">
+
+                  <input
+                    type={
+                      showConfirmPassword
+                        ? "text"
+                        : "password"
+                    }
+                    placeholder="Confirm password"
+                    value={confirmPassword}
+                    onChange={(e) =>
+                      setConfirmPassword(e.target.value)
+                    }
+                    className={`w-full rounded-xl border bg-slate-900 px-5 py-4 pr-14 text-white placeholder:text-slate-500 transition focus:ring-2 ${
+                      errors.confirmPassword
+                        ? "border-red-500 focus:ring-red-500/20"
+                        : "border-slate-700 focus:border-blue-500 focus:ring-blue-500/20"
+                    }`}
+                  />
+
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setShowConfirmPassword(
+                        !showConfirmPassword
+                      )
+                    }
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white"
+                  >
+                    {showConfirmPassword ? (
+                      <FaEyeSlash />
+                    ) : (
+                      <FaEye />
+                    )}
+                  </button>
+
+                </div>
+
+                {errors.confirmPassword && (
+                  <p className="mt-2 text-sm text-red-400">
+                    {errors.confirmPassword}
+                  </p>
+                )}
+
+              </div>
+
+              {/* Already Have Account */}
+
+              <p className="text-center text-slate-400">
+
+                Already have an account?
+
+                <Link
+                  to="/login"
+                  className="ml-2 font-semibold text-blue-400 hover:text-blue-300"
+                >
+                  Login
+                </Link>
+
+              </p>
+
+            </form>
+            
