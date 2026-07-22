@@ -119,20 +119,20 @@ function Login() {
                  LEFT PANEL
         ======================================= */}
 
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: -80,
-          }}
-          animate={{
-            opacity: 1,
-            x: 0,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-          className="relative hidden overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 lg:flex"
-        ></motion.div>
+      <motion.div
+  initial={{
+    opacity: 0,
+    x: -80,
+  }}
+  animate={{
+    opacity: 1,
+    x: 0,
+  }}
+  transition={{
+    duration: 0.8,
+  }}
+  className="relative hidden overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 lg:flex"
+>
                   {/* Background Glow */}
           <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-blue-500/20 blur-[140px]" />
 
@@ -263,8 +263,8 @@ function Login() {
           transition={{
             duration: 0.8,
           }}
-          className="flex items-center justify-center px-8 py-10"
-        >
+          className="flex items-center justify-center px-8 py-10">
+        
 
           <div className="w-full max-w-md">
 
