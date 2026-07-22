@@ -17,7 +17,7 @@ function Navbar() {
         opacity: 1,
         y: 0,
       }}
-      className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/95 backdrop-blur-md"
+      className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-lg shadow-sm"
     >
       <div className="flex h-20 items-center justify-between px-6 lg:px-10">
 
