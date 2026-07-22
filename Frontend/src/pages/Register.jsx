@@ -325,7 +325,7 @@ function Register() {
             <form
               onSubmit={handleRegister}
               className="mt-10 space-y-6"
-            ></form>
+            >
                           {/* ==========================
                     Full Name
               ========================== */}
