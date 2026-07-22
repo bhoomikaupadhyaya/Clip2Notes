@@ -13,7 +13,7 @@ function Footer() {
         {/* Left */}
 
         <div>
-<span>
+
          © {new Date().getFullYear()} Clip2Notes
 
 <span className="ml-2 text-slate-400">
