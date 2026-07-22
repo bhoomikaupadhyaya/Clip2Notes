@@ -4,26 +4,29 @@ import Footer from "./Footer";
 
 function MainLayout({ children }) {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-800">
+      {/* Navbar */}
       <Navbar />
 
-      <div className="flex">
-
+      {/* Main Layout */}
+      <div className="flex min-h-[calc(100vh-64px)]">
+        {/* Sidebar */}
         <Sidebar />
 
-        <main className="flex-1 p-8 ml-0 lg:ml-64 min-h-screen">
-
-          {children}
-
+        {/* Main Content */}
+        <main className="flex-1 lg:ml-64 pt-24 pb-10 px-6 lg:px-10 overflow-x-hidden">
+          {/* Common Container */}
+          <div className="max-w-7xl mx-auto w-full">
+            {children}
+          </div>
         </main>
-
       </div>
 
+      {/* Footer */}
       <Footer />
-
     </div>
   );
 }
 
 export default MainLayout;
+
