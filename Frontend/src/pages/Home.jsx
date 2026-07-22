@@ -9,12 +9,12 @@ import CTASection from "../components/CTASection";
 
 function Home() {
   return (
-    <div className="bg-slate-900 text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 overflow-x-hidden">
 
       <Navbar />
 
-      <main>
-
+      
+<main className="pt-20">
         <HeroSection />
 
         <FeaturesSection />
