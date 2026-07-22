@@ -1,125 +1,109 @@
 import { motion } from "framer-motion";
 import {
-  FaVideo,
-  FaMicrophoneAlt,
-  FaRegStickyNote,
+  FaFileAlt,
+  FaBrain,
+  FaComments,
   FaClock,
   FaQuestionCircle,
   FaLayerGroup,
-  FaComments,
-  FaFileExport,
 } from "react-icons/fa";
 
 const features = [
   {
-    icon: <FaVideo size={34} />,
-    title: "Video Upload",
-    description:
-      "Upload lectures, meetings, or YouTube videos and let AI analyze them automatically.",
-  },
-  {
-    icon: <FaMicrophoneAlt size={34} />,
-    title: "Speech to Text",
-    description:
-      "Accurate transcription powered by Whisper AI with speaker-aware processing.",
-  },
-  {
-    icon: <FaRegStickyNote size={34} />,
+    icon: <FaFileAlt />,
     title: "Smart Notes",
     description:
-      "Generate structured notes with headings, bullet points, and key takeaways.",
+      "Generate well-structured notes with headings, bullet points, and key takeaways.",
+    color: "bg-[#EEF2FF] text-[#6366F1]",
   },
   {
-    icon: <FaClock size={34} />,
-    title: "Important Timestamps",
+    icon: <FaClock />,
+    title: "Timestamps",
     description:
-      "Automatically detect important moments and create clickable timestamps.",
+      "Navigate long videos instantly using AI-generated timestamped sections.",
+    color: "bg-[#F3E8FF] text-violet-500",
   },
   {
-    icon: <FaQuestionCircle size={34} />,
-    title: "AI Quiz Generator",
+    icon: <FaQuestionCircle />,
+    title: "AI Quiz",
     description:
-      "Generate MCQs and revision questions instantly from the transcript.",
+      "Automatically create quizzes to reinforce learning after every video.",
+    color: "bg-[#FEF3C7] text-amber-500",
   },
   {
-    icon: <FaLayerGroup size={34} />,
+    icon: <FaLayerGroup />,
     title: "Flashcards",
     description:
-      "Create interactive flashcards for quick revision and better retention.",
+      "Convert important concepts into interactive flashcards for revision.",
+    color: "bg-[#DCFCE7] text-green-600",
   },
   {
-    icon: <FaComments size={34} />,
+    icon: <FaComments />,
     title: "Chat with Video",
     description:
-      "Ask questions about the uploaded video and receive contextual AI answers.",
+      "Ask questions about your uploaded videos and get contextual AI answers.",
+    color: "bg-[#FCE7F3] text-pink-500",
   },
   {
-    icon: <FaFileExport size={34} />,
-    title: "Export Notes",
+    icon: <FaBrain />,
+    title: "AI Insights",
     description:
-      "Download summaries and notes as PDF, DOCX, or Markdown for offline use.",
+      "Extract summaries, action items, and important concepts automatically.",
+    color: "bg-[#E0F2FE] text-sky-500",
   },
 ];
 
 function FeaturesSection() {
   return (
-    <section className="bg-slate-950 py-24 text-white">
-      <div className="mx-auto max-w-7xl px-6">
-
-        {/* Heading */}
+    <section className="bg-[#F8FAFC] py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="text-center"
         >
-          <span className="rounded-full bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-400">
-            Powerful AI Features
+          <span className="rounded-full bg-[#EEF2FF] px-5 py-2 text-sm font-semibold text-[#6366F1]">
+            Features
           </span>
 
-          <h2 className="mt-6 text-4xl font-bold md:text-5xl">
-            Everything You Need to Learn Faster
+          <h2 className="mt-6 text-4xl font-bold text-slate-900">
+            Everything You Need to Learn Smarter
           </h2>
 
-          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-400">
-            VideoMind AI transforms long videos into structured knowledge.
-            Save time, revise smarter, and interact with your learning content.
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-slate-600">
+            Clip2Notes uses AI to transform long videos into concise notes,
+            quizzes, flashcards, and interactive conversations—all in one
+            place.
           </p>
         </motion.div>
 
-        {/* Feature Cards */}
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
           {features.map((feature, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 60 }}
+              key={feature.title}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.08,
-              }}
+              transition={{ delay: index * 0.08 }}
               viewport={{ once: true }}
-              whileHover={{
-                y: -10,
-              }}
-              className="group rounded-2xl border border-slate-700 bg-slate-900 p-8 transition-all hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10"
+              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
             >
-              <div className="mb-6 inline-flex rounded-xl bg-blue-500/10 p-4 text-blue-400 transition group-hover:bg-blue-500 group-hover:text-white">
+              <div
+                className={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl text-2xl ${feature.color}`}
+              >
                 {feature.icon}
               </div>
 
-              <h3 className="mb-4 text-2xl font-semibold">
+              <h3 className="mb-3 text-xl font-semibold text-slate-900">
                 {feature.title}
               </h3>
 
-              <p className="leading-7 text-slate-400">
+              <p className="leading-7 text-slate-600">
                 {feature.description}
               </p>
             </motion.div>
           ))}
-
         </div>
       </div>
     </section>
