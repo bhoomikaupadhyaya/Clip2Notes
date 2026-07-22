@@ -198,7 +198,7 @@ function Register() {
             duration: 0.8,
           }}
           className="relative hidden overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-purple-950 lg:flex"
-        ></motion.div>
+        >
                   {/* Background Glow */}
           <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-blue-500/20 blur-[140px]" />
 
