@@ -62,11 +62,11 @@ const menuItems = [
 
 function Sidebar() {
   return (
-    <aside className="fixed left-0 top-20 hidden h-[calc(100vh-80px)] w-64 border-r border-slate-800 bg-slate-950 lg:flex lg:flex-col">
+    <aside className="fixed left-0 top-20 hidden h-[calc(100vh-80px)] w-64 border-r border-slate-200 bg-white lg:flex lg:flex-col shadow-sm">
 
       {/* Navigation */}
 
-      <nav className="flex-1 overflow-y-auto px-4 py-6">
+      <nav className="flex-1 overflow-y-auto px-5 py-6"></aside>"
 
         <ul className="space-y-2">
 
@@ -76,16 +76,16 @@ function Sidebar() {
 
               <NavLink
                 to={item.path}
-                className={({ isActive }) =>
-                  `flex items-center gap-4 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 ${
-                    isActive
-                      ? "bg-blue-600 text-white shadow-lg"
-                      : "text-slate-400 hover:bg-slate-800 hover:text-white"
-                  }`
-                }
+               className={({ isActive }) =>
+  `flex items-center gap-4 rounded-2xl px-4 py-3 text-sm font-medium transition-all duration-200 ${
+    isActive
+      ? "bg-[#EEF2FF] text-[#6366F1] shadow-sm border border-[#C7D2FE]"
+      : "text-slate-600 hover:bg-slate-100 hover:text-[#6366F1]"
+  }`
+}
               >
 
-                <span className="text-lg">
+                <span className="text-xl">
 
                   {item.icon}
 
@@ -109,9 +109,9 @@ function Sidebar() {
 
       {/* Bottom Section */}
 
-      <div className="border-t border-slate-800 p-4">
+      <div className="border-t border-slate-200 p-5">
 
-        <button className="flex w-full items-center gap-4 rounded-xl px-4 py-3 text-slate-400 transition hover:bg-red-600 hover:text-white">
+        <button className="flex w-full items-center gap-4 rounded-2xl px-4 py-3 text-slate-600 transition-all duration-200 hover:bg-red-50 hover:text-red-500">
 
           <FaSignOutAlt />
 
