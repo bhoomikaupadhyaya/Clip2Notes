@@ -6,21 +6,19 @@ import {
 
 function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950">
+    <footer className="mt-10 border-t border-slate-200 bg-white">
 
-      <div className="mx-auto flex flex-col items-center justify-between gap-6 px-8 py-6 text-sm text-slate-400 md:flex-row">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-6 text-sm text-slate-500 md:flex-row lg:px-8">
 
         {/* Left */}
 
         <div>
+<span>
+         © {new Date().getFullYear()} Clip2Notes
 
-          © {new Date().getFullYear()} VideoMind AI
-
-          <span className="ml-2 text-slate-500">
-
-            All Rights Reserved
-
-          </span>
+<span className="ml-2 text-slate-400">
+  All Rights Reserved
+</span>
 
         </div>
 
@@ -36,13 +34,13 @@ function Footer() {
 
           </span>
 
-          using React + Tailwind CSS
+          Transform Videos into Smart Notes
 
         </div>
 
         {/* Right */}
 
-        <div className="flex gap-5 text-lg">
+        <div className="flex items-center gap-5 text-xl">
 
           <a
             href="https://github.com"
@@ -57,14 +55,14 @@ function Footer() {
             href="https://linkedin.com"
             target="_blank"
             rel="noreferrer"
-            className="transition hover:text-blue-400"
+            className="text-slate-500 transition hover:text-[#7C83FD]"
           >
             <FaLinkedin />
           </a>
 
           <a
             href="mailto:example@gmail.com"
-            className="transition hover:text-green-400"
+            className="text-slate-500 transition hover:text-[#7C83FD]"
           >
             <FaEnvelope />
           </a>
