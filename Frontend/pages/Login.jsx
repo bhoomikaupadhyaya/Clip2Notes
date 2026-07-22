@@ -132,7 +132,7 @@ function Login() {
             duration: 0.8,
           }}
           className="relative hidden overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 lg:flex"
-        ></motion.div>
+        >
                   {/* Background Glow */}
           <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-blue-500/20 blur-[140px]" />
 
