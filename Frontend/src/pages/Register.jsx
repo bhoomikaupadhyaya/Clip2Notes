@@ -619,8 +619,15 @@ function Register() {
   }}
 />
 
-</div>
+  </div>        {/* Card */}
 
+</motion.div>   {/* Right Panel */}
 
+    </div>      {/* Grid */}
+
+  </div>        {/* Main */}
+
+);
+}
 
 export default Register;
