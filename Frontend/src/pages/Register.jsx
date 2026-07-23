@@ -294,333 +294,333 @@ function Register() {
                     Full Name
               ========================== */}
 
-              <div>
+              {/* Full Name */}
 
-                <label className="mb-2 block text-sm font-medium text-slate-300">
-                  Full Name
-                </label>
+<div>
 
-                <input
-                  type="text"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  placeholder="John Doe"
-                  className={`w-full rounded-xl border bg-slate-900 px-5 py-4 text-white placeholder:text-slate-500 transition focus:ring-2 ${
-                    errors.fullName
-                      ? "border-red-500 focus:ring-red-500/20"
-                      : "border-slate-700 focus:border-blue-500 focus:ring-blue-500/20"
-                  }`}
-                />
+  <label className="mb-2 block text-sm font-semibold text-slate-700">
+    Full Name
+  </label>
 
-                {errors.fullName && (
-                  <p className="mt-2 text-sm text-red-400">
-                    {errors.fullName}
-                  </p>
-                )}
+  <input
+    type="text"
+    name="fullName"
+    value={formData.fullName}
+    onChange={handleChange}
+    placeholder="Enter your full name"
+    className={`w-full rounded-2xl border bg-slate-50 px-5 py-4 text-slate-700 placeholder:text-slate-400 transition-all duration-200 focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-4 ${
+      errors.fullName
+        ? "border-red-400 focus:ring-red-100"
+        : "border-slate-200 focus:ring-indigo-100"
+    }`}
+  />
 
-              </div>
+  {errors.fullName && (
+    <p className="mt-2 text-sm text-red-500">
+      {errors.fullName}
+    </p>
+  )}
+
+</div>
 
               {/* ==========================
                       Email
               ========================== */}
 
-              <div>
+            {/* Email Address */}
 
-                <label className="mb-2 block text-sm font-medium text-slate-300">
-                  Email Address
-                </label>
+<div>
 
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="you@example.com"
-                  className={`w-full rounded-xl border bg-slate-900 px-5 py-4 text-white placeholder:text-slate-500 transition focus:ring-2 ${
-                    errors.email
-                      ? "border-red-500 focus:ring-red-500/20"
-                      : "border-slate-700 focus:border-blue-500 focus:ring-blue-500/20"
-                  }`}
-                />
+  <label className="mb-2 block text-sm font-semibold text-slate-700">
+    Email Address
+  </label>
 
-                {errors.email && (
-                  <p className="mt-2 text-sm text-red-400">
-                    {errors.email}
-                  </p>
-                )}
+  <input
+    type="email"
+    name="email"
+    value={formData.email}
+    onChange={handleChange}
+    placeholder="you@example.com"
+    className={`w-full rounded-2xl border bg-slate-50 px-5 py-4 text-slate-700 placeholder:text-slate-400 transition-all duration-200 focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-4 ${
+      errors.email
+        ? "border-red-400 focus:ring-red-100"
+        : "border-slate-200 focus:ring-indigo-100"
+    }`}
+  />
 
-              </div>
+  {errors.email && (
+    <p className="mt-2 text-sm text-red-500">
+      {errors.email}
+    </p>
+  )}
+
+</div>
 
               {/* ==========================
                     Password
               ========================== */}
 
-              <div>
+            {/* Password */}
 
-                <label className="mb-2 block text-sm font-medium text-slate-300">
-                  Password
-                </label>
+<div>
 
-                <div className="relative">
+  <label className="mb-2 block text-sm font-semibold text-slate-700">
+    Password
+  </label>
 
-                  <input
-                    type={
-                      showPassword
-                        ? "text"
-                        : "password"
-                    }
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    placeholder="Create Password"
-                    className={`w-full rounded-xl border bg-slate-900 px-5 py-4 pr-14 text-white placeholder:text-slate-500 transition focus:ring-2 ${
-                      errors.password
-                        ? "border-red-500 focus:ring-red-500/20"
-                        : "border-slate-700 focus:border-blue-500 focus:ring-blue-500/20"
-                    }`}
-                  />
+  <div className="relative">
 
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setShowPassword(
-                        !showPassword
-                      )
-                    }
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white"
-                  >
-                    {showPassword ? (
-                      <FaEyeSlash />
-                    ) : (
-                      <FaEye />
-                    )}
-                  </button>
+    <input
+      type={showPassword ? "text" : "password"}
+      name="password"
+      value={formData.password}
+      onChange={handleChange}
+      placeholder="Create a password"
+      className={`w-full rounded-2xl border bg-slate-50 px-5 py-4 pr-14 text-slate-700 placeholder:text-slate-400 transition-all duration-200 focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-4 ${
+        errors.password
+          ? "border-red-400 focus:ring-red-100"
+          : "border-slate-200 focus:ring-indigo-100"
+      }`}
+    />
 
-                </div>
+    <button
+      type="button"
+      onClick={() => setShowPassword(!showPassword)}
+      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 transition hover:text-indigo-600"
+    >
+      {showPassword ? <FaEyeSlash /> : <FaEye />}
+    </button>
 
-                {errors.password && (
-                  <p className="mt-2 text-sm text-red-400">
-                    {errors.password}
-                  </p>
-                )}
+  </div>
 
-              </div>
+  {errors.password && (
+    <p className="mt-2 text-sm text-red-500">
+      {errors.password}
+    </p>
+  )}
 
+</div>
               {/* Password Strength */}
 
-              {formData.password && (
+             {/* Password Strength */}
 
-                <div>
+{formData.password && (
 
-                  <div className="mb-2 flex justify-between text-sm">
+  <div className="rounded-2xl bg-slate-50 p-4">
 
-                    <span>Password Strength</span>
+    <div className="mb-3 flex items-center justify-between">
 
-                    <span
-                      className={`font-semibold ${
-                        getPasswordStrength() === "Strong"
-                          ? "text-green-400"
-                          : getPasswordStrength() ===
-                            "Medium"
-                          ? "text-yellow-400"
-                          : "text-red-400"
-                      }`}
-                    >
-                      {getPasswordStrength()}
-                    </span>
+      <span className="text-sm font-medium text-slate-600">
+        Password Strength
+      </span>
 
-                  </div>
+      <span
+        className={`text-sm font-semibold ${
+          getPasswordStrength() === "Strong"
+            ? "text-green-600"
+            : getPasswordStrength() === "Medium"
+            ? "text-yellow-600"
+            : "text-red-500"
+        }`}
+      >
+        {getPasswordStrength()}
+      </span>
 
-                  <div className="h-2 rounded-full bg-slate-700">
+    </div>
 
-                    <div
-                      className={`h-2 rounded-full transition-all duration-500 ${
-                        getPasswordStrength() ===
-                        "Strong"
-                          ? "w-full bg-green-500"
-                          : getPasswordStrength() ===
-                            "Medium"
-                          ? "w-2/3 bg-yellow-500"
-                          : "w-1/3 bg-red-500"
-                      }`}
-                    ></div>
+    <div className="h-2 overflow-hidden rounded-full bg-slate-200">
 
-                  </div>
+      <div
+        className={`h-full rounded-full transition-all duration-500 ${
+          getPasswordStrength() === "Strong"
+            ? "w-full bg-green-500"
+            : getPasswordStrength() === "Medium"
+            ? "w-2/3 bg-yellow-500"
+            : "w-1/3 bg-red-500"
+        }`}
+      />
 
-                </div>
+    </div>
 
-              )}
+  </div>
+
+)}
+
+              
 
               {/* ==========================
                   Confirm Password
               ========================== */}
 
-              <div>
+              {/* Confirm Password */}
 
-                <label className="mb-2 block text-sm font-medium text-slate-300">
-                  Confirm Password
-                </label>
+<div>
 
-                <div className="relative">
+  <label className="mb-2 block text-sm font-semibold text-slate-700">
+    Confirm Password
+  </label>
 
-                  <input
-                    type={
-                      showConfirmPassword
-                        ? "text"
-                        : "password"
-                    }
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    placeholder="Confirm Password"
-                    className={`w-full rounded-xl border bg-slate-900 px-5 py-4 pr-14 text-white placeholder:text-slate-500 transition focus:ring-2 ${
-                      errors.confirmPassword
-                        ? "border-red-500 focus:ring-red-500/20"
-                        : "border-slate-700 focus:border-blue-500 focus:ring-blue-500/20"
-                    }`}
-                  />
+  <div className="relative">
 
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setShowConfirmPassword(
-                        !showConfirmPassword
-                      )
-                    }
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white"
-                  >
-                    {showConfirmPassword ? (
-                      <FaEyeSlash />
-                    ) : (
-                      <FaEye />
-                    )}
-                  </button>
+    <input
+      type={showConfirmPassword ? "text" : "password"}
+      name="confirmPassword"
+      value={formData.confirmPassword}
+      onChange={handleChange}
+      placeholder="Confirm your password"
+      className={`w-full rounded-2xl border bg-slate-50 px-5 py-4 pr-14 text-slate-700 placeholder:text-slate-400 transition-all duration-200 focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-4 ${
+        errors.confirmPassword
+          ? "border-red-400 focus:ring-red-100"
+          : "border-slate-200 focus:ring-indigo-100"
+      }`}
+    />
 
-                </div>
+    <button
+      type="button"
+      onClick={() =>
+        setShowConfirmPassword(!showConfirmPassword)
+      }
+      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 transition hover:text-indigo-600"
+    >
+      {showConfirmPassword ? (
+        <FaEyeSlash />
+      ) : (
+        <FaEye />
+      )}
+    </button>
 
-                {errors.confirmPassword && (
-                  <p className="mt-2 text-sm text-red-400">
-                    {errors.confirmPassword}
-                  </p>
-                )}
+  </div>
 
-              </div>
+  {errors.confirmPassword && (
+    <p className="mt-2 text-sm text-red-500">
+      {errors.confirmPassword}
+    </p>
+  )}
+
+</div>
 
               {/* ==========================
                   Terms
               ========================== */}
 
-              <label className="flex items-start gap-3 text-sm text-slate-300">
+              {/* Terms & Conditions */}
 
-                <input
-                  type="checkbox"
-                  checked={acceptTerms}
-                  onChange={(e) =>
-                    setAcceptTerms(
-                      e.target.checked
-                    )
-                  }
-                  className="mt-1 h-4 w-4"
-                />
+<div>
 
-                <span>
-                  I agree to the
-                  <span className="cursor-pointer text-blue-400 hover:text-blue-300">
-                    {" "}
-                    Terms & Conditions
-                  </span>{" "}
-                  and
-                  <span className="cursor-pointer text-blue-400 hover:text-blue-300">
-                    {" "}
-                    Privacy Policy
-                  </span>
-                </span>
+  <label className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
 
-              </label>
+    <input
+      type="checkbox"
+      checked={acceptTerms}
+      onChange={(e) => setAcceptTerms(e.target.checked)}
+      className="mt-1 h-5 w-5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+    />
 
-              {errors.terms && (
-                <p className="text-sm text-red-400">
-                  {errors.terms}
-                </p>
-              )}
+    <span className="text-sm leading-6 text-slate-600">
+      I agree to the{" "}
+      <span className="cursor-pointer font-semibold text-indigo-600 hover:text-indigo-700">
+        Terms & Conditions
+      </span>{" "}
+      and{" "}
+      <span className="cursor-pointer font-semibold text-indigo-600 hover:text-indigo-700">
+        Privacy Policy
+      </span>.
+    </span>
+
+  </label>
+
+  {errors.terms && (
+    <p className="mt-2 text-sm text-red-500">
+      {errors.terms}
+    </p>
+  )}
+
+</div>
 
               {/* ==========================
                   Register Button
               ========================== */}
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                disabled={loading}
-                type="submit"
-                className="flex w-full items-center justify-center rounded-xl bg-blue-600 py-4 text-lg font-semibold transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-70"
-              >
-                {loading ? (
-                  <>
-                    <div className="mr-3 h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
-                    Creating Account...
-                  </>
-                ) : (
-                  "Create Account"
-                )}
-              </motion.button>
+              {/* Create Account Button */}
 
+<motion.button
+  whileHover={{
+    scale: 1.02,
+    y: -2,
+  }}
+  whileTap={{
+    scale: 0.98,
+  }}
+  disabled={loading}
+  type="submit"
+  className="flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-indigo-500 to-violet-500 py-4 text-lg font-semibold text-white shadow-lg shadow-indigo-300 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-400 disabled:cursor-not-allowed disabled:opacity-70"
+>
+  {loading ? (
+    <>
+      <div className="mr-3 h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+      Creating Account...
+    </>
+  ) : (
+    <>
+      Create Account
+      <span className="ml-2 text-xl">→</span>
+    </>
+  )}
+</motion.button>
               {/* Divider */}
+{/* Divider */}
 
-              <div className="relative">
+<div className="relative py-2">
 
-                <div className="absolute inset-0 flex items-center">
+  <div className="absolute inset-0 flex items-center">
 
-                  <div className="w-full border-t border-slate-700"></div>
+    <div className="w-full border-t border-slate-200"></div>
 
-                </div>
+  </div>
 
-                <div className="relative flex justify-center">
+  <div className="relative flex justify-center">
 
-                  <span className="bg-slate-950 px-4 text-sm text-slate-500">
-                    OR
-                  </span>
+    <span className="bg-white px-5 text-sm font-medium text-slate-400">
+      OR
+    </span>
 
-                </div>
+  </div>
 
-              </div>
+</div>
 
-              <p className="text-center text-slate-400">
+{/* Login Link */}
 
-                Already have an account?
+<p className="text-center text-slate-500">
 
-                <Link
-                  to="/login"
-                  className="ml-2 font-semibold text-blue-400 hover:text-blue-300"
-                >
-                  Login
-                </Link>
+  Already have an account?
 
-              </p>
-                          
+  <Link
+    to="/login"
+    className="ml-2 font-semibold text-indigo-600 transition hover:text-indigo-700"
+  >
+    Sign In
+  </Link>
 
-          </div>
-
-        </motion.div>
-
-      </div>
+</p>
 
       {/* Toast Notifications */}
+<ToastContainer
+  position="top-right"
+  autoClose={2500}
+  hideProgressBar={false}
+  newestOnTop
+  closeOnClick
+  pauseOnHover
+  draggable
+  theme="light"
+  toastStyle={{
+    borderRadius: "16px",
+    fontSize: "14px",
+  }}
+/>
 
-      <ToastContainer
-        position="top-right"
-        autoClose={2500}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        pauseOnHover
-        draggable
-        theme="dark"
-      />
-
-    </div>
-  );
+</div>
+);
 }
 
 export default Register;
