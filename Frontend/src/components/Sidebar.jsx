@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import {
   FaHome,
-  FaUpload,
+  FaCloudUploadAlt,
   FaVideo,
   FaStickyNote,
   FaQuestionCircle,
@@ -11,101 +11,65 @@ import {
   FaUser,
   FaSignOutAlt,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const menuItems = [
-  {
-    title: "Dashboard",
-    path: "/dashboard",
-    icon: <FaHome />,
-  },
-  {
-    title: "Upload",
-    path: "/upload",
-    icon: <FaUpload />,
-  },
-  {
-    title: "Video Details",
-    path: "/video-details",
-    icon: <FaVideo />,
-  },
-  {
-    title: "Notes",
-    path: "/notes",
-    icon: <FaStickyNote />,
-  },
-  {
-    title: "Quiz",
-    path: "/quiz",
-    icon: <FaQuestionCircle />,
-  },
-  {
-    title: "Flashcards",
-    path: "/flashcards",
-    icon: <FaLayerGroup />,
-  },
-  {
-    title: "Chat",
-    path: "/chat",
-    icon: <FaComments />,
-  },
-  {
-    title: "History",
-    path: "/history",
-    icon: <FaHistory />,
-  },
-  {
-    title: "Profile",
-    path: "/profile",
-    icon: <FaUser />,
-  },
+  { name: "Dashboard", path: "/dashboard", icon: <FaHome /> },
+  { name: "Upload", path: "/upload", icon: <FaCloudUploadAlt /> },
+  { name: "Video Details", path: "/video-details", icon: <FaVideo /> },
+  { name: "Notes", path: "/notes", icon: <FaStickyNote /> },
+  { name: "Quiz", path: "/quiz", icon: <FaQuestionCircle /> },
+  { name: "Flashcards", path: "/flashcards", icon: <FaLayerGroup /> },
+  { name: "Chat", path: "/chat", icon: <FaComments /> },
+  { name: "History", path: "/history", icon: <FaHistory /> },
+  { name: "Profile", path: "/profile", icon: <FaUser /> },
 ];
 
 function Sidebar() {
   return (
-    <aside className="fixed left-0 top-20 hidden h-[calc(100vh-80px)] w-64 border-r border-slate-200 bg-white lg:flex lg:flex-col shadow-sm">
+    <motion.aside
+      initial={{ x: -40, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className="fixed left-0 top-20 hidden h-[calc(100vh-80px)] w-64 border-r border-slate-200 bg-white lg:flex lg:flex-col"
+    >
+      <div className="flex-1 overflow-y-auto px-5 py-6">
+        <div className="mb-6">
+          <p className="px-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
+            Navigation
+          </p>
+        </div>
 
-      {/* Navigation */}
-<nav className="flex-1 overflow-y-auto px-5 py-6">
-  <ul className="space-y-2">
-    {menuItems.map((item) => (
-      <li key={item.path}>
-        <NavLink
-          to={item.path}
-          className={({ isActive }) =>
-            `flex items-center gap-4 rounded-2xl px-4 py-3 text-sm font-medium transition-all duration-200 ${
-              isActive
-                ? "bg-[#EEF2FF] text-[#6366F1] shadow-sm border border-[#C7D2FE]"
-                : "text-slate-600 hover:bg-slate-100 hover:text-[#6366F1]"
-            }`
-          }
-        >
-          {/* icon */}
-          {/* label */}
-        </NavLink>
-      </li>
-    ))}
-  </ul>
-</nav>
-      
-              
+        <nav className="space-y-2">
+          {menuItems.map((item) => (
+            <NavLink
+              key={item.name}
+              to={item.path}
+              className={({ isActive }) =>
+                `group flex items-center gap-4 rounded-2xl px-4 py-3 transition-all duration-300 ${
+                  isActive
+                    ? "bg-gradient-to-r from-[#7C83FD] to-[#A5B4FC] text-white shadow-lg"
+                    : "text-slate-600 hover:bg-slate-100 hover:text-[#7C83FD]"
+                }`
+              }
+            >
+              <span className="text-lg">{item.icon}</span>
 
-                
-
-      {/* Bottom Section */}
-
-      <div className="border-t border-slate-200 p-5">
-
-        <button className="flex w-full items-center gap-4 rounded-2xl px-4 py-3 text-slate-600 transition-all duration-200 hover:bg-red-50 hover:text-red-500">
-
-          <FaSignOutAlt />
-
-          Logout
-
-        </button>
-
+              <span className="text-sm font-semibold">
+                {item.name}
+              </span>
+            </NavLink>
+          ))}
+        </nav>
       </div>
 
-    </aside>
+      <div className="border-t border-slate-200 p-5">
+        <button className="flex w-full items-center justify-center gap-3 rounded-2xl bg-red-50 py-3 font-semibold text-red-500 transition-all duration-300 hover:bg-red-100">
+          <FaSignOutAlt />
+          Logout
+        </button>
+      </div>
+    </motion.aside>
   );
 }
 

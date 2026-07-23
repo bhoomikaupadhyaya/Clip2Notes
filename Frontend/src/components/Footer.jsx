@@ -1,77 +1,119 @@
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 function Footer() {
   return (
-    <footer className="mt-10 border-t border-slate-200 bg-white">
+    <motion.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="mt-16 border-t border-slate-200 bg-white"
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+        <div className="grid gap-10 md:grid-cols-3 items-start">
+          {/* Brand */}
+          <div>
+            <h2 className="text-2xl font-bold text-slate-800">
+              Clip2Notes
+            </h2>
 
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-6 text-sm text-slate-500 md:flex-row lg:px-8">
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              Transform YouTube videos, lectures and meetings into
+              AI-powered notes, summaries, quizzes, flashcards and
+              interactive chats in seconds.
+            </p>
+          </div>
 
-        {/* Left */}
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold text-slate-800 mb-4">
+              Quick Links
+            </h3>
 
-        <div>
+            <ul className="space-y-3 text-sm text-slate-600">
+              <li>
+                <a href="/" className="hover:text-[#7C83FD] transition">
+                  Home
+                </a>
+              </li>
 
-         © {new Date().getFullYear()} Clip2Notes
+              <li>
+                <a
+                  href="/dashboard"
+                  className="hover:text-[#7C83FD] transition"
+                >
+                  Dashboard
+                </a>
+              </li>
 
-<span className="ml-2 text-slate-400">
-  All Rights Reserved
-</span>
+              <li>
+                <a
+                  href="/upload"
+                  className="hover:text-[#7C83FD] transition"
+                >
+                  Upload
+                </a>
+              </li>
 
+              <li>
+                <a
+                  href="/profile"
+                  className="hover:text-[#7C83FD] transition"
+                >
+                  Profile
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-lg font-semibold text-slate-800 mb-4">
+              Connect
+            </h3>
+
+            <div className="flex gap-4">
+              <a
+                href="#"
+                className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-slate-600 transition hover:bg-[#7C83FD] hover:text-white"
+              >
+                <FaGithub />
+              </a>
+
+              <a
+                href="#"
+                className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-slate-600 transition hover:bg-[#7C83FD] hover:text-white"
+              >
+                <FaLinkedin />
+              </a>
+
+              <a
+                href="#"
+                className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-slate-600 transition hover:bg-[#7C83FD] hover:text-white"
+              >
+                <FaEnvelope />
+              </a>
+            </div>
+
+            <p className="mt-5 text-sm text-slate-500">
+              AI-powered learning platform for students and professionals.
+            </p>
+          </div>
         </div>
 
-        {/* Center */}
+        <div className="mt-10 border-t border-slate-200 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-slate-500">
+            © 2026 Clip2Notes. All Rights Reserved.
+          </p>
 
-        <div className="text-center">
-
-          Built with
-
-          <span className="mx-2 text-red-500">
-
-            ❤️
-
-          </span>
-
-          Transform Videos into Smart Notes
-
+          <p className="flex items-center gap-2 text-sm text-slate-500">
+            Built with
+            <FaHeart className="text-pink-500" />
+            using React, Vite & AI
+          </p>
         </div>
-
-        {/* Right */}
-
-        <div className="flex items-center gap-5 text-xl">
-
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
-            className="transition hover:text-white"
-          >
-            <FaGithub />
-          </a>
-
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noreferrer"
-            className="text-slate-500 transition hover:text-[#7C83FD]"
-          >
-            <FaLinkedin />
-          </a>
-
-          <a
-            href="mailto:example@gmail.com"
-            className="text-slate-500 transition hover:text-[#7C83FD]"
-          >
-            <FaEnvelope />
-          </a>
-
-        </div>
-
       </div>
-
-    </footer>
+    </motion.footer>
   );
 }
 
