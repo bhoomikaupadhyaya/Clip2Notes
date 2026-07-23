@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import { register } from "../services/auth";
 
@@ -185,7 +186,7 @@ function Register() {
 
         {/* LEFT PANEL */}
 
-        {/* LEFT PANEL */}
+        
 
 <motion.div
   initial={{ opacity: 0, x: -60 }}
@@ -294,8 +295,7 @@ function Register() {
                     Full Name
               ========================== */}
 
-              {/* Full Name */}
-
+              
 <div>
 
   <label className="mb-2 block text-sm font-semibold text-slate-700">
@@ -326,8 +326,6 @@ function Register() {
               {/* ==========================
                       Email
               ========================== */}
-
-            {/* Email Address */}
 
 <div>
 
@@ -360,7 +358,7 @@ function Register() {
                     Password
               ========================== */}
 
-            {/* Password */}
+            
 
 <div>
 
@@ -452,8 +450,6 @@ function Register() {
                   Confirm Password
               ========================== */}
 
-              {/* Confirm Password */}
-
 <div>
 
   <label className="mb-2 block text-sm font-semibold text-slate-700">
@@ -503,7 +499,7 @@ function Register() {
                   Terms
               ========================== */}
 
-              {/* Terms & Conditions */}
+              
 
 <div>
 
@@ -568,7 +564,7 @@ function Register() {
   )}
 </motion.button>
               {/* Divider */}
-{/* Divider */}
+
 
 <div className="relative py-2">
 
@@ -619,13 +615,13 @@ function Register() {
   }}
 />
 
-  </div>        {/* Card */}
+  </div>        
 
-</motion.div>   {/* Right Panel */}
+</motion.div>   
 
-    </div>      {/* Grid */}
+    </div>      
 
-  </div>        {/* Main */}
+  </div>        
 
 );
 }

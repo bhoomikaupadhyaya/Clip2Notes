@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
-import { FaBell, FaSearch, FaUserCircle, FaVideo } from "react-icons/fa";
+import {
+  FaBell,
+  FaSearch,
+  FaUserCircle,
+  FaVideo,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 
 function Navbar() {
@@ -8,48 +13,75 @@ function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl"
+      className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl"
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-        {/* Logo */}
-        <Link to="/dashboard" className="flex items-center gap-4 shrink-0">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#7C83FD] via-[#8B8FFF] to-[#C4B5FD] text-white shadow-lg">
+      <div className="mx-auto flex h-20 max-w-7xl items-center gap-6 px-6 lg:px-8">
+        {/* ================= Logo ================= */}
+
+        <Link
+          to="/dashboard"
+          className="flex shrink-0 items-center gap-4"
+        >
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#7C83FD] via-[#8B8FFF] to-[#C4B5FD] text-white shadow-lg shadow-indigo-200"
+          >
             <FaVideo className="text-lg" />
-          </div>
+          </motion.div>
 
           <div>
-            <h1 className="text-xl font-bold tracking-tight text-slate-800">
+            <h1 className="text-xl font-bold tracking-tight text-slate-900">
               Clip2Notes
             </h1>
+
             <p className="text-xs text-slate-500">
               Learn Smarter with AI
             </p>
           </div>
         </Link>
 
-        {/* Search */}
-        <div className="mx-10 hidden flex-1 lg:block">
-          <div className="relative max-w-xl">
-            <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+        {/* ================= Search ================= */}
+
+        <div className="hidden flex-1 px-6 lg:flex">
+          <div className="relative w-full">
+            <FaSearch className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400" />
 
             <input
               type="text"
               placeholder="Search videos, notes, quizzes..."
-              className="w-full rounded-2xl border border-slate-200 bg-slate-50 py-3 pl-12 pr-5 text-sm text-slate-700 transition-all duration-300 outline-none focus:border-[#7C83FD] focus:bg-white focus:ring-4 focus:ring-[#C4B5FD]/30"
+              className="h-12 w-full rounded-2xl border border-slate-200 bg-slate-50 pl-14 pr-20 text-sm text-slate-700 placeholder:text-slate-400 outline-none transition-all duration-300 focus:border-[#7C83FD] focus:bg-white focus:ring-4 focus:ring-[#C4B5FD]/30"
             />
+
+            <div className="absolute right-3 top-1/2 hidden -translate-y-1/2 items-center gap-1 rounded-lg border border-slate-200 bg-white px-2.5 py-1 text-xs font-medium text-slate-400 shadow-sm xl:flex">
+              Ctrl
+              <span className="rounded bg-slate-100 px-1 py-0.5">
+                K
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* Right */}
-        <div className="flex items-center gap-4">
-          <button className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+        {/* ================= Right ================= */}
+
+        <div className="flex shrink-0 items-center gap-4">
+          <motion.button
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md"
+          >
             <FaBell className="text-lg text-slate-600" />
 
             <span className="absolute right-2 top-2 h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white"></span>
-          </button>
+          </motion.button>
 
-          <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-2 shadow-sm transition-all duration-300 hover:shadow-md">
-            <FaUserCircle size={38} className="text-[#7C83FD]" />
+          <motion.div
+            whileHover={{ y: -2 }}
+            className="flex cursor-pointer items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-2 shadow-sm transition-all duration-300 hover:shadow-md"
+          >
+            <FaUserCircle
+              size={40}
+              className="text-[#7C83FD]"
+            />
 
             <div className="hidden md:block">
               <h3 className="text-sm font-semibold text-slate-800">
@@ -60,7 +92,7 @@ function Navbar() {
                 Student
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.nav>
