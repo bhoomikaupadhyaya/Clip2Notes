@@ -133,6 +133,155 @@ function Login() {
                remember me, forgot password, login button,
                register link and ToastContainer from your existing Login.jsx,
                changing only the Tailwind classes to the new pastel theme. */}
+               <form onSubmit={handleLogin} className="mt-10 space-y-6">
+
+  {/* Email */}
+
+  <div>
+    <label className="mb-2 block text-sm font-semibold text-slate-700">
+      Email Address
+    </label>
+
+    <input
+      type="email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      placeholder="Enter your email"
+      className={`w-full rounded-2xl border bg-slate-50 px-5 py-4 outline-none transition-all duration-300
+      ${
+        errors.email
+          ? "border-red-400 focus:ring-red-200"
+          : "border-slate-200 focus:border-[#7C83FD] focus:ring-4 focus:ring-[#C4B5FD]/30"
+      }`}
+    />
+
+    {errors.email && (
+      <p className="mt-2 text-sm text-red-500">
+        {errors.email}
+      </p>
+    )}
+  </div>
+
+  {/* Password */}
+
+  <div>
+    <label className="mb-2 block text-sm font-semibold text-slate-700">
+      Password
+    </label>
+
+    <div className="relative">
+
+      <input
+        type={showPassword ? "text" : "password"}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Enter your password"
+        className={`w-full rounded-2xl border bg-slate-50 px-5 py-4 pr-14 outline-none transition-all duration-300
+        ${
+          errors.password
+            ? "border-red-400 focus:ring-red-200"
+            : "border-slate-200 focus:border-[#7C83FD] focus:ring-4 focus:ring-[#C4B5FD]/30"
+        }`}
+      />
+
+      <button
+        type="button"
+        onClick={() => setShowPassword(!showPassword)}
+        className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-500"
+      >
+        {showPassword ? <FaEyeSlash /> : <FaEye />}
+      </button>
+
+    </div>
+
+    {errors.password && (
+      <p className="mt-2 text-sm text-red-500">
+        {errors.password}
+      </p>
+    )}
+  </div>
+
+  {/* Remember */}
+
+  <div className="flex items-center justify-between">
+
+    <label className="flex items-center gap-3 text-sm text-slate-600">
+
+      <input
+        type="checkbox"
+        checked={rememberMe}
+        onChange={() => setRememberMe(!rememberMe)}
+        className="h-4 w-4 rounded border-slate-300 text-[#7C83FD]"
+      />
+
+      Remember Me
+
+    </label>
+
+    <Link
+      to="/forgot-password"
+      className="text-sm font-medium text-[#7C83FD] hover:underline"
+    >
+      Forgot Password?
+    </Link>
+
+  </div>
+
+  {/* Login */}
+
+  <button
+    type="submit"
+    disabled={loading}
+    className="flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-[#7C83FD] to-[#A5B4FC] px-6 py-4 text-lg font-semibold text-white shadow-lg transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70"
+  >
+    {loading ? (
+      <div className="flex items-center gap-3">
+
+        <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+
+        Signing In...
+
+      </div>
+    ) : (
+      "Sign In"
+    )}
+  </button>
+
+  <div className="relative">
+
+    <div className="absolute inset-0 flex items-center">
+      <div className="w-full border-t border-slate-200"></div>
+    </div>
+
+    <div className="relative flex justify-center">
+      <span className="bg-white px-4 text-sm text-slate-500">
+        OR
+      </span>
+    </div>
+
+  </div>
+
+  <button
+    type="button"
+    className="w-full rounded-2xl border border-slate-200 bg-white px-6 py-4 font-semibold text-slate-700 transition hover:border-[#7C83FD] hover:bg-slate-50"
+  >
+    Continue with Google
+  </button>
+
+  <p className="text-center text-slate-600">
+
+    Don't have an account?{" "}
+
+    <Link
+      to="/register"
+      className="font-semibold text-[#7C83FD] hover:underline"
+    >
+      Create Account
+    </Link>
+
+  </p>
+
+</form>
 
           </div>
         </motion.div>

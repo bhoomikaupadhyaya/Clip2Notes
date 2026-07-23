@@ -185,147 +185,111 @@ function Register() {
 
         {/* LEFT PANEL */}
 
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: -80,
-          }}
-          animate={{
-            opacity: 1,
-            x: 0,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-          className="relative hidden overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-purple-950 lg:flex"
-        >
-                  {/* Background Glow */}
-          <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-blue-500/20 blur-[140px]" />
+        {/* LEFT PANEL */}
 
-          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-purple-500/20 blur-[140px]" />
+<motion.div
+  initial={{ opacity: 0, x: -60 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+  className="relative hidden overflow-hidden bg-gradient-to-br from-[#6366F1] via-[#7C83FD] to-[#C4B5FD] lg:flex"
+>
+  {/* Background Blur */}
 
-          {/* Left Content */}
+  <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-white/20 blur-[140px]" />
 
-          <div className="relative z-10 flex flex-col justify-center px-16">
+  <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-indigo-200/30 blur-[140px]" />
 
-            <span className="mb-6 w-fit rounded-full bg-purple-500/10 px-5 py-2 text-sm font-medium text-purple-400">
-              Join VideoMind AI
-            </span>
+  <div className="relative z-10 flex flex-col justify-center px-16 py-20 text-white">
 
-            <h1 className="text-6xl font-extrabold leading-tight">
+    <span className="mb-6 w-fit rounded-full bg-white/20 px-5 py-2 text-sm font-semibold backdrop-blur">
+      🚀 Join Clip2Notes
+    </span>
 
-              Start Your
+    <h1 className="text-6xl font-extrabold leading-tight">
+      Learn
+      <span className="block text-yellow-100">
+        Smarter.
+      </span>
+    </h1>
 
-              <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                AI Learning
-              </span>
+    <p className="mt-8 max-w-lg text-lg leading-8 text-indigo-100">
+      Create your free account and transform YouTube videos,
+      lectures and meeting recordings into AI-generated notes,
+      quizzes, flashcards and intelligent conversations.
+    </p>
 
-              Journey.
+    <div className="mt-14 space-y-5">
 
-            </h1>
+      <motion.div
+        whileHover={{ scale: 1.03 }}
+        className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur"
+      >
+        <h3 className="text-lg font-semibold">
+          🎥 Upload Videos
+        </h3>
 
-            <p className="mt-8 max-w-lg text-lg leading-8 text-slate-300">
+        <p className="mt-2 text-indigo-100">
+          Upload YouTube videos, lectures and meetings.
+        </p>
+      </motion.div>
 
-              Create your account and unlock AI-powered
-              summaries, quizzes, flashcards,
-              timestamps, semantic search and
-              Chat with Video.
+      <motion.div
+        whileHover={{ scale: 1.03 }}
+        className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur"
+      >
+        <h3 className="text-lg font-semibold">
+          📝 AI Smart Notes
+        </h3>
 
-            </p>
+        <p className="mt-2 text-indigo-100">
+          Get structured notes, summaries and timestamps instantly.
+        </p>
+      </motion.div>
 
-            {/* Feature Cards */}
+      <motion.div
+        whileHover={{ scale: 1.03 }}
+        className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur"
+      >
+        <h3 className="text-lg font-semibold">
+          💬 Chat with Video
+        </h3>
 
-            <div className="mt-14 space-y-5">
+        <p className="mt-2 text-indigo-100">
+          Ask questions and receive contextual AI answers.
+        </p>
+      </motion.div>
 
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                className="rounded-2xl border border-slate-700 bg-slate-800/80 p-5 backdrop-blur"
-              >
+    </div>
 
-                <h3 className="font-semibold text-white">
-                  🎯 Personalized Dashboard
-                </h3>
+  </div>
 
-                <p className="mt-2 text-sm text-slate-400">
-                  Manage all uploaded videos
-                  from one dashboard.
-                </p>
-
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                className="rounded-2xl border border-slate-700 bg-slate-800/80 p-5 backdrop-blur"
-              >
-
-                <h3 className="font-semibold text-white">
-                  🤖 AI Generated Notes
-                </h3>
-
-                <p className="mt-2 text-sm text-slate-400">
-                  Instantly generate summaries,
-                  quizzes and flashcards.
-                </p>
-
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                className="rounded-2xl border border-slate-700 bg-slate-800/80 p-5 backdrop-blur"
-              >
-
-                <h3 className="font-semibold text-white">
-                  💬 Chat with Video
-                </h3>
-
-                <p className="mt-2 text-sm text-slate-400">
-                  Ask questions and receive
-                  intelligent answers from your
-                  uploaded videos.
-                </p>
-
-              </motion.div>
-
-            </div>
-
-          </div>
-
-        </motion.div>
-
+</motion.div>
         {/* ==========================
              RIGHT PANEL
         ========================== */}
+<motion.div
+  initial={{ opacity: 0, x: 60 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+  className="flex items-center justify-center bg-[#F8FAFC] px-8 py-10"
+>
+  <div className="w-full max-w-md rounded-3xl bg-white p-10 shadow-2xl">
 
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: 80,
-          }}
-          animate={{
-            opacity: 1,
-            x: 0,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-          className="flex items-center justify-center px-8 py-10"
-        >
+    <div className="mb-8 text-center">
 
-          <div className="w-full max-w-md">
+      <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-100 text-3xl">
+        🚀
+      </div>
 
-            <h2 className="text-4xl font-bold">
-              Create Account 🚀
-            </h2>
+      <h2 className="text-4xl font-bold text-slate-800">
+        Create Account
+      </h2>
 
-            <p className="mt-4 text-slate-400">
-              Join VideoMind AI and start
-              learning smarter today.
-            </p>
+      <p className="mt-3 text-slate-500">
+        Join Clip2Notes and unlock AI-powered learning.
+      </p>
 
-            <form
-              onSubmit={handleRegister}
-              className="mt-10 space-y-6"
-            >
+    </div>
                           {/* ==========================
                     Full Name
               ========================== */}
@@ -634,7 +598,7 @@ function Register() {
                 </Link>
 
               </p>
-                          </form>
+                          
 
           </div>
 
