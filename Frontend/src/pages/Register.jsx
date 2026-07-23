@@ -402,7 +402,7 @@ function Register() {
 </div>
               {/* Password Strength */}
 
-             {/* Password Strength */}
+            
 
 {formData.password && (
 
