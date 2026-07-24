@@ -94,7 +94,7 @@ function Login() {
      Sign in to continue transforming your videos into AI-powered notes, quizzes, flashcards, and intelligent conversations.
     </p>
 
-    <div className="w-[600px] rounded-full border border-white/20 bg-white/10 py-7 px-10 backdrop-blur-xl">
+    <div className="w-[600px] rounded-none  border  border-white/20 bg-white/10 py-7 px-10 backdrop-blur-xl">
 
       <motion.div
         whileHover={{ scale: 1.03 }}
