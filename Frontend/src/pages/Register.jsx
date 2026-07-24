@@ -221,7 +221,7 @@ function Register() {
 
       <motion.div
         whileHover={{ scale: 1.03 }}
-       className="w-full max-w-xl rounded-3xl border border-white/20 bg-white/10 p-6 text-center backdrop-blur"
+       className="w-[600px] rounded-full border border-white/20 bg-white/10 py-7 px-10 text-center backdrop-blur-xl"
       >
         <h3 className="text-lg font-semibold">
            Upload Videos

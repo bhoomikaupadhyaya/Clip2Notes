@@ -71,7 +71,7 @@ function Login() {
   initial={{ opacity: 0, x: -60 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.8 }}
-  className="relative hidden lg:flex flex-col justify-center overflow-hidden bg-gradient-to-br from-[#6366F1] via-[#7C83FD] to-[#B9B8FF] min-h-screen rounded-none "
+  className="relative hidden lg:flex flex-col justify-center overflow-hidden bg-gradient-to-br  from-[#191970] via-[#25258C] to-[#4F46E5] min-h-screen rounded-none "
 >
   {/* Background Blur */}
 
