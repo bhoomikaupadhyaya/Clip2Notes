@@ -13,7 +13,7 @@ function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl"
+      className="fixed top-0 left-0 right-0 z-50 h-20 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl"
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center gap-6 px-6 lg:px-8">
         {/* ================= Logo ================= */}

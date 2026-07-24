@@ -4,8 +4,7 @@ import Footer from "./Footer";
 
 function MainLayout({ children }) {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800">
-
+    <div className="fixed left-0 top-20 h-[calc(100vh-80px)] w-64 bg-white border-r border-slate-200">
       <Navbar />
 
       <div className="pt-20">
