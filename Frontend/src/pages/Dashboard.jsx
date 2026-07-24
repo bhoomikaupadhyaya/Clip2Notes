@@ -19,26 +19,26 @@ function Dashboard() {
     {
       title: "Videos",
       value: 24,
-      color: "bg-blue-500",
-      icon: <FaVideo size={28} />,
+      color: "bg-indigo-100 text-indigo-600",
+      icon: <FaVideo size={26} />,
     },
     {
       title: "Notes",
       value: 128,
-      color: "bg-green-500",
-      icon: <FaStickyNote size={28} />,
+      color: "bg-green-100 text-green-600",
+      icon: <FaStickyNote size={26} />,
     },
     {
       title: "Flashcards",
       value: 432,
-      color: "bg-purple-500",
-      icon: <FaLayerGroup size={28} />,
+      color: "bg-violet-100 text-violet-600",
+      icon: <FaLayerGroup size={26} />,
     },
     {
       title: "Quizzes",
       value: 37,
-      color: "bg-orange-500",
-      icon: <FaQuestionCircle size={28} />,
+      color: "bg-orange-100 text-orange-600",
+      icon: <FaQuestionCircle size={26} />,
     },
   ];
 
@@ -79,26 +79,48 @@ function Dashboard() {
 
     <MainLayout>
 
-      <div className="space-y-10">
+      <div className="space-y-8">
 
         {/* Header */}
 
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: -25 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between"
         >
 
-          <h1 className="text-4xl font-bold text-white">
+          <div>
 
-            Welcome Back 👋
+            <h1 className="text-4xl font-bold text-slate-800">
 
-          </h1>
+              Welcome Back 👋
 
-          <p className="mt-3 text-slate-400">
+            </h1>
 
-            Here's an overview of your AI learning workspace.
+            <p className="mt-3 text-slate-500">
 
-          </p>
+              Here's an overview of your AI learning workspace.
+
+            </p>
+
+          </div>
+
+          <div className="rounded-2xl bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-5 text-white shadow-lg">
+
+            <p className="text-sm opacity-90">
+
+              Today's Progress
+
+            </p>
+
+            <h2 className="mt-1 text-3xl font-bold">
+
+              75%
+
+            </h2>
+
+          </div>
 
         </motion.div>
 
@@ -112,8 +134,8 @@ function Dashboard() {
 
           <input
             type="text"
-            placeholder="Search videos..."
-            className="w-full rounded-2xl border border-slate-700 bg-slate-900 py-4 pl-14 pr-6 text-white focus:border-blue-500 outline-none"
+            placeholder="Search videos, notes, quizzes..."
+            className="w-full rounded-2xl border border-slate-200 bg-white py-4 pl-14 pr-6 text-slate-700 shadow-sm transition-all duration-300 focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-100"
           />
 
         </div>
@@ -127,26 +149,29 @@ function Dashboard() {
             <motion.div
               key={index}
               whileHover={{
-                y: -8,
+                y: -5,
               }}
-              className="rounded-2xl border border-slate-700 bg-slate-900 p-6"
+              transition={{
+                duration: 0.25,
+              }}
+              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg"
             >
 
               <div
-                className={`mb-6 flex h-16 w-16 items-center justify-center rounded-xl ${item.color}`}
+                className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl ${item.color}`}
               >
 
                 {item.icon}
 
               </div>
 
-              <h3 className="text-3xl font-bold">
+              <h2 className="text-3xl font-bold text-slate-800">
 
                 {item.value}
 
-              </h3>
+              </h2>
 
-              <p className="mt-2 text-slate-400">
+              <p className="mt-2 text-slate-500">
 
                 {item.title}
 
@@ -157,6 +182,8 @@ function Dashboard() {
           ))}
 
         </div>
+
+        {/* Recent Uploads & Quick Actions */}
                 {/* Recent Uploads & Quick Actions */}
 
         <div className="grid gap-8 lg:grid-cols-3">
@@ -167,16 +194,24 @@ function Dashboard() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="rounded-2xl border border-slate-700 bg-slate-900 p-6 lg:col-span-2"
+            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2"
           >
 
-            <div className="mb-8 flex items-center justify-between">
+            <div className="mb-6 flex items-center justify-between">
 
-              <h2 className="text-2xl font-semibold">
-                Recent Uploads
-              </h2>
+              <div>
 
-              <button className="flex items-center gap-2 text-blue-400 hover:text-blue-300">
+                <h2 className="text-2xl font-bold text-slate-800">
+                  Recent Uploads
+                </h2>
+
+                <p className="mt-1 text-slate-500">
+                  Continue learning from your latest videos.
+                </p>
+
+              </div>
+
+              <button className="flex items-center gap-2 rounded-xl bg-indigo-50 px-4 py-2 font-medium text-indigo-600 transition hover:bg-indigo-100">
 
                 View All
 
@@ -186,27 +221,27 @@ function Dashboard() {
 
             </div>
 
-            <div className="space-y-5">
+            <div className="space-y-4">
 
               {recentVideos.map((video, index) => (
 
                 <motion.div
                   key={index}
                   whileHover={{
-                    scale: 1.02,
+                    scale: 1.01,
                   }}
-                  className="flex items-center justify-between rounded-xl border border-slate-700 bg-slate-800 p-5"
+                  className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-indigo-300 hover:bg-white hover:shadow-md"
                 >
 
                   <div>
 
-                    <h3 className="text-lg font-semibold">
+                    <h3 className="text-lg font-semibold text-slate-800">
 
                       {video.title}
 
                     </h3>
 
-                    <p className="mt-1 text-sm text-slate-400">
+                    <p className="mt-1 text-sm text-slate-500">
 
                       Duration • {video.duration}
 
@@ -217,8 +252,8 @@ function Dashboard() {
                   <span
                     className={`rounded-full px-4 py-2 text-sm font-medium ${
                       video.status === "Completed"
-                        ? "bg-green-500/20 text-green-400"
-                        : "bg-yellow-500/20 text-yellow-400"
+                        ? "bg-green-100 text-green-600"
+                        : "bg-yellow-100 text-yellow-600"
                     }`}
                   >
 
@@ -237,40 +272,46 @@ function Dashboard() {
           {/* Quick Actions */}
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="rounded-2xl border border-slate-700 bg-slate-900 p-6"
+            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
           >
 
-            <h2 className="mb-8 text-2xl font-semibold">
+            <h2 className="text-2xl font-bold text-slate-800">
 
               Quick Actions
 
             </h2>
 
-            <div className="space-y-5">
+            <p className="mt-2 text-slate-500">
+
+              Access your most-used features.
+
+            </p>
+
+            <div className="mt-6 space-y-4">
 
               {quickActions.map((action, index) => (
 
                 <motion.button
                   key={index}
                   whileHover={{
-                    scale: 1.03,
+                    scale: 1.02,
                   }}
                   whileTap={{
                     scale: 0.98,
                   }}
-                  className="flex w-full items-center gap-4 rounded-xl border border-slate-700 bg-slate-800 p-5 transition hover:border-blue-500"
+                  className="flex w-full items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-indigo-300 hover:bg-indigo-50"
                 >
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500 text-xl">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100 text-xl text-indigo-600">
 
                     {action.icon}
 
                   </div>
 
-                  <span className="font-medium">
+                  <span className="font-semibold text-slate-700">
 
                     {action.title}
 
@@ -287,6 +328,7 @@ function Dashboard() {
         </div>
 
         {/* Recent Activity */}
+                {/* Recent Activity */}
 
         <motion.div
           initial={{
@@ -300,18 +342,24 @@ function Dashboard() {
           transition={{
             delay: 0.4,
           }}
-          className="rounded-2xl border border-slate-700 bg-slate-900 p-6"
+          className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
         >
 
-          <div className="mb-8 flex items-center justify-between">
+          <div className="mb-6 flex items-center justify-between">
 
-            <h2 className="text-2xl font-semibold">
+            <div>
 
-              Recent Activity
+              <h2 className="text-2xl font-bold text-slate-800">
+                Recent Activity
+              </h2>
 
-            </h2>
+              <p className="mt-1 text-slate-500">
+                Latest AI-generated content and learning updates.
+              </p>
 
-            <button className="text-blue-400 hover:text-blue-300">
+            </div>
+
+            <button className="rounded-xl bg-indigo-50 px-4 py-2 font-medium text-indigo-600 transition hover:bg-indigo-100">
 
               View History
 
@@ -319,60 +367,58 @@ function Dashboard() {
 
           </div>
 
-          <div className="space-y-5">
+          <div className="space-y-4">
 
-            <div className="rounded-xl border border-slate-700 bg-slate-800 p-5">
+            <motion.div
+              whileHover={{ scale: 1.01 }}
+              className="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-indigo-300 hover:bg-white"
+            >
 
-              <h3 className="font-semibold">
-
+              <h3 className="font-semibold text-slate-800">
                 React Complete Course
-
               </h3>
 
-              <p className="mt-2 text-slate-400">
-
+              <p className="mt-2 text-slate-500">
                 AI Summary generated successfully.
-
               </p>
 
-            </div>
+            </motion.div>
 
-            <div className="rounded-xl border border-slate-700 bg-slate-800 p-5">
+            <motion.div
+              whileHover={{ scale: 1.01 }}
+              className="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-indigo-300 hover:bg-white"
+            >
 
-              <h3 className="font-semibold">
-
+              <h3 className="font-semibold text-slate-800">
                 Database Systems
-
               </h3>
 
-              <p className="mt-2 text-slate-400">
-
+              <p className="mt-2 text-slate-500">
                 Flashcards generated successfully.
-
               </p>
 
-            </div>
+            </motion.div>
 
-            <div className="rounded-xl border border-slate-700 bg-slate-800 p-5">
+            <motion.div
+              whileHover={{ scale: 1.01 }}
+              className="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-indigo-300 hover:bg-white"
+            >
 
-              <h3 className="font-semibold">
-
+              <h3 className="font-semibold text-slate-800">
                 Machine Learning Lecture
-
               </h3>
 
-              <p className="mt-2 text-slate-400">
-
+              <p className="mt-2 text-slate-500">
                 Quiz generated successfully.
-
               </p>
 
-            </div>
+            </motion.div>
 
           </div>
 
         </motion.div>
-              </div>
+
+      </div>
 
     </MainLayout>
 

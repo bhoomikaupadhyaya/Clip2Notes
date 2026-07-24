@@ -182,7 +182,7 @@ function Register() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
 
-      <div className="grid min-h-screen lg:grid-cols-2">
+      <div className="grid min-h-screen lg:grid-cols-[45%_55%]">
 
         {/* LEFT PANEL */}
 
@@ -192,7 +192,7 @@ function Register() {
   initial={{ opacity: 0, x: -60 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.8 }}
-  className="relative hidden overflow-hidden bg-gradient-to-br from-[#6366F1] via-[#7C83FD] to-[#C4B5FD] lg:flex"
+  className="relative hidden overflow-hidden bg-gradient-to-br from-[#6366F1] via-[#7C83FD] to-[#C4B5FD] lg:flex pl-10"
 >
   {/* Background Blur */}
 
@@ -200,33 +200,31 @@ function Register() {
 
   <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-indigo-200/30 blur-[140px]" />
 
-  <div className="relative z-10 flex flex-col justify-center px-16 py-20 text-white">
+  <div className="relative z-10 flex flex-col items-center justify-center px-16 py-20 text-white">
 
-    <span className="mb-6 w-fit rounded-full bg-white/20 px-5 py-2 text-sm font-semibold backdrop-blur">
-      🚀 Join Clip2Notes
+      <span className="-translate-x-4 rounded-full bg-white/20 px-5 py-2 text-sm font-semibold backdrop-blur">
+      Join Clip2Notes
     </span>
 
-    <h1 className="text-6xl font-extrabold leading-tight">
-      Learn
-      <span className="block text-yellow-100">
-        Smarter.
-      </span>
-    </h1>
+    <h1 className="text-5xl font-extrabold leading-tight whitespace-nowrap">
+  <span className="text-white">Learn </span>
+  <span className="text-yellow-100">Smarter.</span>
+</h1>
 
-    <p className="mt-8 max-w-lg text-lg leading-8 text-indigo-100">
+    <p className="mt-8 max-w-lg text-center text-lg leading-8 text-indigo-100">
       Create your free account and transform YouTube videos,
       lectures and meeting recordings into AI-generated notes,
       quizzes, flashcards and intelligent conversations.
     </p>
 
-    <div className="mt-14 space-y-5">
+    <div className="w-full rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur">
 
       <motion.div
         whileHover={{ scale: 1.03 }}
-        className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur"
+       className="w-full max-w-xl rounded-3xl border border-white/20 bg-white/10 p-6 text-center backdrop-blur"
       >
         <h3 className="text-lg font-semibold">
-          🎥 Upload Videos
+           Upload Videos
         </h3>
 
         <p className="mt-2 text-indigo-100">
@@ -238,28 +236,30 @@ function Register() {
         whileHover={{ scale: 1.03 }}
         className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur"
       >
-        <h3 className="text-lg font-semibold">
-          📝 AI Smart Notes
+        <h3 className="text-center text-lg font-semibold">
+           AI Smart Notes
         </h3>
 
-        <p className="mt-2 text-indigo-100">
+        <p className="mt-2 text-center text-indigo-100">
           Get structured notes, summaries and timestamps instantly.
         </p>
       </motion.div>
 
+      
       <motion.div
-        whileHover={{ scale: 1.03 }}
-        className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur"
-      >
-        <h3 className="text-lg font-semibold">
-          💬 Chat with Video
-        </h3>
+  whileHover={{ scale: 1.03 }}
+  className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur"
+>
+  <div className="flex flex-col items-center">
+    <h3 className="text-lg font-semibold">
+      Chat with Video
+    </h3>
 
-        <p className="mt-2 text-indigo-100">
-          Ask questions and receive contextual AI answers.
-        </p>
-      </motion.div>
-
+    <p className="mt-2 text-center text-indigo-100">
+      Ask questions and receive contextual AI answers.
+    </p>
+  </div>
+</motion.div>
     </div>
 
   </div>
@@ -272,15 +272,13 @@ function Register() {
   initial={{ opacity: 0, x: 60 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.8 }}
-  className="flex items-center justify-center bg-[#F8FAFC] px-8 py-10"
+  className="flex items-center justify-center bg-[#F8FAFC] px-8 py-8"
 >
-  <div className="w-full max-w-md rounded-3xl bg-white p-10 shadow-2xl">
+  <div className="w-[600px] rounded-3xl bg-white p-10 shadow-2xl">
 
     <div className="mb-8 text-center">
 
-      <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-100 text-3xl">
-        🚀
-      </div>
+      
 
       <h2 className="text-4xl font-bold text-slate-800">
         Create Account
