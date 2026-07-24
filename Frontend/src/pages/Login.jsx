@@ -50,7 +50,7 @@ function Login() {
 
       await new Promise((resolve) => setTimeout(resolve, 1800));
 
-      toast.success("Login Successful 🎉");
+      toast.success("Login Successful ");
 
       setTimeout(() => navigate("/dashboard"), 1200);
     } catch (error) {
@@ -90,21 +90,21 @@ function Login() {
           <div className="mt-12 space-y-5">
 
             <div className="rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur">
-              <h3 className="font-semibold text-lg">🎥 Upload Videos</h3>
+              <h3 className="font-semibold text-lg"> Upload Videos</h3>
               <p className="mt-2 text-indigo-100">
                 Upload lectures, tutorials and meeting recordings.
               </p>
             </div>
 
             <div className="rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur">
-              <h3 className="font-semibold text-lg">📝 AI Notes</h3>
+              <h3 className="font-semibold text-lg"> AI Notes</h3>
               <p className="mt-2 text-indigo-100">
                 Generate structured notes and summaries instantly.
               </p>
             </div>
 
             <div className="rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur">
-              <h3 className="font-semibold text-lg">💬 Chat with Video</h3>
+              <h3 className="font-semibold text-lg"> Chat with Video</h3>
               <p className="mt-2 text-indigo-100">
                 Ask questions about your uploaded content.
               </p>
@@ -122,7 +122,7 @@ function Login() {
           <div className="w-full max-w-lg rounded-[32px] border border-slate-200 bg-white p-10 shadow-xl">
 
             <h2 className="text-4xl font-bold text-slate-900">
-              Welcome Back 👋
+              Welcome Back 
             </h2>
 
             <p className="mt-3 text-slate-500">
